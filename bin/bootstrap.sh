@@ -5,6 +5,7 @@ GREEN='\033[0;32m'
 NC='\033[0m'
 
 if [ "$(hostname)" == "mcs1" ]; then
+    sleep 5
     mariadb -h xpd1 -u xpand < /tmp/sql/xpand.sql
     if [ $? -eq 0 ]; then
         printf "Installing Sample Xpand Tables... ${GREEN}done${NC}\n"
