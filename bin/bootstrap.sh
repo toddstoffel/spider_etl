@@ -13,14 +13,7 @@ if [ "$(hostname)" == "mcs1" ]; then
         echo "Installing Sample Xpand Tables... ${RED}fail${NC}\n"
         exit 1
     fi
-    dnf -y install MariaDB-spider-engine > /dev/null 2>&1
     provision
-    if [ $? -eq 0 ]; then
-        printf "Installing Spider Engine... ${GREEN}done${NC}\n"
-    else
-        printf "Installing Spider Engine... ${RED}fail${NC}\nd"
-        exit 1
-    fi
     sleep 5
     mariadb < /tmp/sql/mariadb.sql
     if [ $? -eq 0 ]; then
