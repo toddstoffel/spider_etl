@@ -1,5 +1,3 @@
-INSTALL SONAME 'ha_spider';
-
 CREATE DATABASE IF NOT EXISTS `sample`;
 
 USE `sample`;
